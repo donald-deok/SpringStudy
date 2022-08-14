@@ -2,16 +2,12 @@ package deok.hellodeok.service;
 
 import deok.hellodeok.domain.Member;
 import deok.hellodeok.repository.MemberRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
 public class MemberService {
 
-    @Autowired
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
