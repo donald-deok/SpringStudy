@@ -2,14 +2,17 @@ package deok.hellodeok.service;
 
 import deok.hellodeok.domain.Member;
 import deok.hellodeok.repository.MemberRepository;
-import deok.hellodeok.repository.MemoryMemberRepository;
 
 import java.util.List;
 import java.util.Optional;
 
 public class MemberService {
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    public MemberService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
+
+    private final MemberRepository memberRepository;
 
     /**
      * 회원가입
@@ -35,7 +38,7 @@ public class MemberService {
         return memberRepository.findAll();
     }
 
-    public Optional<Member> findOne(Long memberId){
+    public Optional<Member> findOne(Long memberId) {
         return memberRepository.findById(memberId);
     }
 }
