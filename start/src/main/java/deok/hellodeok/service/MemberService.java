@@ -2,10 +2,12 @@ package deok.hellodeok.service;
 
 import deok.hellodeok.domain.Member;
 import deok.hellodeok.repository.MemberRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
+@Transactional
 public class MemberService {
 
     public MemberService(MemberRepository memberRepository) {
